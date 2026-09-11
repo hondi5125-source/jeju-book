@@ -55,6 +55,10 @@ em{font-style:italic}
 article footer{margin-top:3.5rem;padding-top:1.6rem;padding-bottom:4rem;border-top:1px solid var(--rule);font-size:.95rem;color:var(--soft)}
 article footer p{margin:0 0 .7rem}
 article footer .book{color:var(--ink);font-size:1.05rem}
+article footer .author{display:flex;gap:1.1rem;align-items:flex-start;margin:1.2rem 0 1rem}
+article footer .author img{width:6.5rem;height:auto;flex:none;display:block}
+article footer .author p{margin:0}
+
 /* Korean */
 article[lang="ko"]{font-family:var(--serif-ko);word-break:keep-all;line-break:strict}
 article[lang="ko"] p,article[lang="ko"] .lede{line-height:1.9}
@@ -212,7 +216,8 @@ if(location.hash==='#ko'){document.documentElement.classList.add('show-ko');docu
 </main>
 <footer>
 <p class="book"><cite>Jeju: What Nature Began, People Shaped</cite><br>Stories of Stone, Wind, Water, and Life on the Island</p>
-<p>Yang Yong-ho was born in 1969 in Wasan-ri, Jeju, and worked for Korean Air at Jeju Airport for thirty years. This chapter comes from the English edition of his book, now in preparation. The Korean original is one tap away at the top of the page.</p>
+<div class="author"><img src="author.jpg" width="360" height="491" alt="Portrait of Yang Yong-ho" loading="lazy">
+<p>Yang Yong-ho was born in 1969 in Wasan-ri, Jeju, and worked for Korean Air at Jeju Airport for thirty years. This chapter comes from the English edition of his book, now in preparation. The Korean original is one tap away at the top of the page.</p></div>
 <p>&copy; Yang Yong-ho 2026</p>
 </footer>
 </article>
@@ -339,7 +344,8 @@ if(location.hash==='#ko'){document.documentElement.classList.add('show-ko');docu
 </main>
 <footer>
 <p class="book">『길은 살아낸 자리다』<br>돌과 바람과 물 사이, 제주 사람이 살아온 길</p>
-<p>양용호는 1969년 제주시 조천읍 와산리에서 태어나 대한항공 제주공항에서 삼십 년 동안 일했다. 영어판 『Jeju: What Nature Began, People Shaped』도 준비하고 있다.</p>
+<div class="author"><img src="author.jpg" width="360" height="491" alt="양용호 사진" loading="lazy">
+<p>양용호는 1969년 제주시 조천읍 와산리에서 태어나 대한항공 제주공항에서 삼십 년 동안 일했다. 영어판 『Jeju: What Nature Began, People Shaped』도 준비하고 있다.</p></div>
 <p>&copy; 양용호 2026</p>
 </footer>
 </article>
