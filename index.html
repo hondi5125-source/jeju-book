@@ -3,21 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Word Called Gwendang — Yang Yong-ho</title>
-<meta name="description" content="In Jeju, people rarely know you by your name alone. A chapter from Jeju: What Nature Began, People Shaped, by Yang Yong-ho.">
+<title>A Word Called Gwendang · 괸당이라는 말 — Yang Yong-ho</title>
+<meta name="description" content="In Jeju, people rarely know you by your name alone. A chapter from Jeju: What Nature Began, People Shaped, by Yang Yong-ho. Read in English or Korean.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A Word Called Gwendang">
-<meta property="og:description" content="In Jeju, people rarely know you by your name alone. They ask whose son you are. A chapter from Jeju: What Nature Began, People Shaped.">
-<!-- Replace hondi5125-source below (two places) after the page goes live -->
+<meta property="og:description" content="In Jeju, people rarely know you by your name alone. They ask whose son you are. A chapter from Jeju: What Nature Began, People Shaped. English and Korean.">
 <meta property="og:url" content="https://hondi5125-source.github.io/jeju-book/">
 <meta property="og:image" content="https://hondi5125-source.github.io/jeju-book/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#fbfaf7; --paper-deep:#ece7e1; --ink:#1d1c1a; --soft:#6b665f; --rule:#d8d1c7; --earth:#8a5a2b;
   --serif:"Palatino Linotype",Palatino,"Book Antiqua","TeX Gyre Pagella","URW Palladio L",Georgia,serif;
+  --serif-ko:"Noto Serif KR","Nanum Myeongjo","AppleMyungjo","Batang",serif;
 }
 *{box-sizing:border-box}
 html{background:linear-gradient(180deg,var(--paper) 0,var(--paper) 60%,var(--paper-deep) 100%) fixed;color:var(--ink)}
@@ -25,39 +30,64 @@ body{margin:0;font-family:var(--serif);font-size:1.1875rem;line-height:1.7;-webk
 .plate{max-width:68rem;margin:0 auto;padding:clamp(1rem,4vw,3rem) clamp(1rem,4vw,3rem) 0}
 .plate img{display:block;width:100%;height:auto}
 .plate figcaption{text-align:right;font-size:.7rem;color:var(--soft);margin-top:.4rem;letter-spacing:.02em}
-header,main,footer{max-width:34rem;margin:0 auto;padding:0 1.25rem}
-header{padding-top:clamp(2rem,6vw,4rem)}
+.switch{max-width:34rem;margin:0 auto;padding:clamp(1.6rem,5vw,3rem) 1.25rem 0;display:flex;gap:1.1rem;font-size:.95rem}
+.switch button{font:inherit;background:none;border:0;padding:.2rem 0;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent}
+.switch button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--earth)}
+.switch button:focus-visible{outline:2px solid var(--earth);outline-offset:3px}
+.switch .ko-label{font-family:var(--serif-ko)}
+article header,article main,article footer{max-width:34rem;margin:0 auto;padding:0 1.25rem}
+article header{padding-top:1.4rem}
 .from{font-size:.95rem;color:var(--soft);margin:0 0 .9rem;font-style:italic}
 .from cite{font-style:normal}
-h1{font-weight:400;font-size:clamp(2.2rem,6.5vw,3.3rem);line-height:1.1;margin:0 0 1.1rem;letter-spacing:-.01em}
-h1 em{font-style:italic}
+h1{font-weight:400;font-size:clamp(2.2rem,6.5vw,3.3rem);line-height:1.12;margin:0 0 1.1rem;letter-spacing:-.01em}
 .byline{margin:0;font-size:1.05rem}
 .lede{margin:2.4rem 0 0;padding-top:1.6rem;border-top:1px solid var(--rule);color:var(--soft);font-size:1.05rem}
 main{padding-top:1rem;padding-bottom:1rem}
 h2{font-size:1.02rem;font-weight:700;margin:2.8rem 0 .6rem;line-height:1.4}
-p{margin:0 0 .75rem;hyphens:manual}
+p{margin:0 0 .75rem}
 p.said{padding-left:1.6rem}
 p.closing{margin-top:2rem;font-size:1.3rem;line-height:1.5}
-em[lang]{font-style:italic}
+em{font-style:italic}
 .fn{font:inherit;font-size:.68em;vertical-align:super;line-height:0;color:var(--earth);background:none;border:0;padding:0 .15em;cursor:pointer;border-bottom:1px solid currentColor}
 .fn:focus-visible{outline:2px solid var(--earth);outline-offset:2px}
-.note{font-size:.9rem;line-height:1.55;color:#3d3a36;margin:.2rem 0 1rem;padding:.7rem .9rem;border-left:2px solid var(--earth);background:rgba(138,90,43,.06)}
+.note{font-size:.9rem;line-height:1.6;color:#3d3a36;margin:.2rem 0 1rem;padding:.7rem .9rem;border-left:2px solid var(--earth);background:rgba(138,90,43,.06)}
 .note-n{color:var(--earth);margin-right:.3rem}
+article footer{margin-top:3.5rem;padding-top:1.6rem;padding-bottom:4rem;border-top:1px solid var(--rule);font-size:.95rem;color:var(--soft)}
+article footer p{margin:0 0 .7rem}
+article footer .book{color:var(--ink);font-size:1.05rem}
+/* Korean */
+article[lang="ko"]{font-family:var(--serif-ko);word-break:keep-all;line-break:strict}
+article[lang="ko"] p,article[lang="ko"] .lede{line-height:1.9}
+article[lang="ko"] body,article[lang="ko"] main{font-size:1.06rem}
+article[lang="ko"] h1{font-weight:400;letter-spacing:-.02em}
+article[lang="ko"] .from{font-style:normal}
+article[lang="ko"] p.closing{font-size:1.2rem;line-height:1.7}
+/* toggling (only when JS runs; otherwise both versions show in sequence) */
 .js .note{display:none}
 .js .note.open{display:block}
-footer{margin-top:3.5rem;padding-top:1.6rem;padding-bottom:4rem;border-top:1px solid var(--rule);font-size:.95rem;color:var(--soft)}
-footer p{margin:0 0 .7rem}
-footer .book{color:var(--ink);font-size:1.05rem}
+.js article[lang="ko"]{display:none}
+.js.show-ko article[lang="ko"]{display:block}
+.js.show-ko article[lang="en"]{display:none}
 @media (max-width:30rem){body{font-size:1.0625rem} p.said{padding-left:1.1rem}}
-@media print{html{background:#fff} .fn{border:0} .js .note{display:block}}
+@media print{html{background:#fff} .switch{display:none} .js .note{display:block}}
 </style>
-<script>document.documentElement.classList.add('js')</script>
+<script>
+document.documentElement.classList.add('js');
+if(location.hash==='#ko'){document.documentElement.classList.add('show-ko');document.documentElement.lang='ko';}
+</script>
 </head>
 <body>
 <figure class="plate">
 <img src="hero-oreum.jpg" width="1600" height="1058" alt="A painting of walkers crossing the ridge of Yongnuni Oreum at sunset, under an orange sky and blue clouds.">
-<figcaption>Yongnuni Oreum</figcaption>
+<figcaption>Yongnuni Oreum · 용눈이오름</figcaption>
 </figure>
+
+<nav class="switch" aria-label="Language">
+<button type="button" data-lang="en" aria-pressed="true">English</button>
+<button type="button" data-lang="ko" aria-pressed="false" class="ko-label" lang="ko">한국어</button>
+</nav>
+
+<article lang="en">
 <header>
 <p class="from">A chapter from <cite>Jeju: What Nature Began, People Shaped</cite></p>
 <h1>A Word Called <em lang="ko-Latn">Gwendang</em></h1>
@@ -74,10 +104,10 @@ footer .book{color:var(--ink);font-size:1.05rem}
 <p>Only then did the other person’s face relax a little.</p>
 <p>As a child I found these conversations strange. Why not simply get to know the person in front of you? Why go back to his father and grandfather, even the village he was born in?</p>
 <p>In Jeju, other people always stood behind any one person.</p>
-<p>Those ties were called <em lang="ko-Latn">gwendang</em>.<button class="fn" type="button" aria-expanded="false" aria-controls="note-1" aria-label="Note 1">1</button></p>
-<aside class="note" id="note-1"><span class="note-n">1</span> <strong><em>gwendang</em></strong> The Jeju word for one’s relatives near and far, by blood and by marriage. Hyeon Pyeong-hyo’s <em lang="ko-Latn">Jeju Dialect Dictionary</em> links it to the Sino-Korean term <em lang="ko-Latn">gwondang</em>, “the circle of those one looks after.”</aside>
-<p>Strictly, <em lang="ko-Latn">gwendang</em> meant relatives by blood and by marriage, but degrees of kinship could not explain it all. An elder whose face you had seen in the neighborhood for years was a <em lang="ko-Latn">samchun</em>,<button class="fn" type="button" aria-expanded="false" aria-controls="note-2" aria-label="Note 2">2</button> and the owner of the restaurant you often went to was a <em lang="ko-Latn">samchun</em> too.</p>
-<aside class="note" id="note-2"><span class="note-n">2</span> <strong><em>samchun</em></strong> Literally “uncle,” but used in Jeju as a term of affection and respect for any older person of one’s village or kin, man or woman.</aside>
+<p>Those ties were called <em lang="ko-Latn">gwendang</em>.<button class="fn" type="button" aria-expanded="false" aria-controls="en-note-1" aria-label="Note 1">1</button></p>
+<aside class="note" id="en-note-1"><span class="note-n">1</span> <strong><em>gwendang</em></strong> The Jeju word for one’s relatives near and far, by blood and by marriage. Hyeon Pyeong-hyo’s <em lang="ko-Latn">Jeju Dialect Dictionary</em> links it to the Sino-Korean term <em lang="ko-Latn">gwondang</em>, “the circle of those one looks after.”</aside>
+<p>Strictly, <em lang="ko-Latn">gwendang</em> meant relatives by blood and by marriage, but degrees of kinship could not explain it all. An elder whose face you had seen in the neighborhood for years was a <em lang="ko-Latn">samchun</em>,<button class="fn" type="button" aria-expanded="false" aria-controls="en-note-2" aria-label="Note 2">2</button> and the owner of the restaurant you often went to was a <em lang="ko-Latn">samchun</em> too.</p>
+<aside class="note" id="en-note-2"><span class="note-n">2</span> <strong><em>samchun</em></strong> Literally “uncle,” but used in Jeju as a term of affection and respect for any older person of one’s village or kin, man or woman.</aside>
 <p class="said">“<em lang="ko-Latn">Samchun</em>, what’s good today?”</p>
 <p>Even without knowing someone’s name, calling them <em lang="ko-Latn">samchun</em> opened the conversation.</p>
 <p>Not everyone you called that was <em lang="ko-Latn">gwendang</em>. But within that one form of address, people joined by blood and people grown close through living side by side were not strictly separated.</p>
@@ -85,8 +115,8 @@ footer .book{color:var(--ink);font-size:1.05rem}
 <p>Relationships did not exist apart from daily life.</p>
 <p>They were woven into the business of living.</p>
 <h2>I Knew the Faces but Not the Names</h2>
-<p>On the nights of our family’s <em lang="ko-Latn">sikge</em>,<button class="fn" type="button" aria-expanded="false" aria-controls="note-3" aria-label="Note 3">3</button> a few close <em lang="ko-Latn">gwendang</em> would come. We held the rite, shared the food, and saw one another’s faces.</p>
-<aside class="note" id="note-3"><span class="note-n">3</span> <strong><em>sikge</em></strong> The Jeju word for <em lang="ko-Latn">jesa</em>, the memorial rite held at night on the anniversary of an ancestor’s death, when the family offers food and drink to the ancestor and then shares the meal.</aside>
+<p>On the nights of our family’s <em lang="ko-Latn">sikge</em>,<button class="fn" type="button" aria-expanded="false" aria-controls="en-note-3" aria-label="Note 3">3</button> a few close <em lang="ko-Latn">gwendang</em> would come. We held the rite, shared the food, and saw one another’s faces.</p>
+<aside class="note" id="en-note-3"><span class="note-n">3</span> <strong><em>sikge</em></strong> The Jeju word for <em lang="ko-Latn">jesa</em>, the memorial rite held at night on the anniversary of an ancestor’s death, when the family offers food and drink to the ancestor and then shares the meal.</aside>
 <p>Weddings, funerals, and grave-tending days brought together even more people than a <em lang="ko-Latn">sikge</em>.</p>
 <p>The faces of the elders I met there were not unfamiliar. But I often mixed up their names. I did not know exactly whose brother someone was, or how many degrees removed from our family.</p>
 <p>I knew the faces but not what to call them.</p>
@@ -133,8 +163,8 @@ footer .book{color:var(--ink);font-size:1.05rem}
 <p>It also recorded who had come to my side, and to whom I must now go.</p>
 <p>Of course, it was not only gratitude that the ledger kept.</p>
 <p>When someone did not give back as much as they had received, there was resentment. Perhaps that family had fallen on hard times; perhaps their circumstances had changed since then. But the ledger did not record any of that.</p>
-<p>These gifts, called <em lang="ko-Latn">bujo</em>, were a strength that carried families through hard days together.<button class="fn" type="button" aria-expanded="false" aria-controls="note-4" aria-label="Note 4">4</button></p>
-<aside class="note" id="note-4"><span class="note-n">4</span> <strong><em>bujo</em></strong> Money given at weddings, funerals, and other major family occasions. The amounts were recorded and later reciprocated, making <em lang="ko-Latn">bujo</em> both a form of mutual aid and a social obligation.</aside>
+<p>These gifts, called <em lang="ko-Latn">bujo</em>, were a strength that carried families through hard days together.<button class="fn" type="button" aria-expanded="false" aria-controls="en-note-4" aria-label="Note 4">4</button></p>
+<aside class="note" id="en-note-4"><span class="note-n">4</span> <strong><em>bujo</em></strong> Money given at weddings, funerals, and other major family occasions. The amounts were recorded and later reciprocated, making <em lang="ko-Latn">bujo</em> both a form of mutual aid and a social obligation.</aside>
 <p>At the same time, they could feel like a debt that must someday be repaid.</p>
 <h2>Comfort Came Fast, and So Did Gossip</h2>
 <p>On a small island, you met the same faces again and again.</p>
@@ -182,17 +212,155 @@ footer .book{color:var(--ink);font-size:1.05rem}
 </main>
 <footer>
 <p class="book"><cite>Jeju: What Nature Began, People Shaped</cite><br>Stories of Stone, Wind, Water, and Life on the Island</p>
-<p>Yang Yong-ho was born in 1969 in Wasan-ri, Jeju, and worked for Korean Air at Jeju Airport for thirty years. This chapter comes from the English edition of his book, now in preparation.</p>
+<p>Yang Yong-ho was born in 1969 in Wasan-ri, Jeju, and worked for Korean Air at Jeju Airport for thirty years. This chapter comes from the English edition of his book, now in preparation. The Korean original is one tap away at the top of the page.</p>
 <p>&copy; Yang Yong-ho 2026</p>
 </footer>
+</article>
+
+<article lang="ko">
+<header>
+<p class="from">『길은 살아낸 자리다』에서</p>
+<h1>괸당이라는 말</h1>
+<p class="byline">양용호</p>
+<p class="lede">제주에서는 이름만으로 사람을 알아보지 않는다. 누구네 아들인지, 어느 마을 사람인지를 묻다 보면 서로 아는 사람 하나가 나온다. 이 장은 그 관계를 부르는 제주말에 관한 이야기다.</p>
+</header>
+<main>
+<h2>누구 집 아들이라?</h2>
+<p>내 이름은 아버지 이름 뒤에서야 알아들어졌다.</p>
+<p class="said">“어디 사람이우꽈?”</p>
+<p>와산이라고 대답하면 질문은 그다음으로 넘어갔다. 성은 무엇인지, 아버지는 누구인지를 물었다.</p>
+<p>몇 마디를 주고받다 보면 아는 사람 하나가 나왔다.</p>
+<p class="said">“아, 그 집 아들이구나.”</p>
+<p>그제야 상대의 표정이 조금 풀렸다.</p>
+<p>어릴 때는 이런 대화가 이상했다. 지금 눈앞에 있는 사람을 알면 될 텐데 왜 그 사람의 아버지와 할아버지, 태어난 마을까지 거슬러 올라가는지 이해하지 못했다.</p>
+<p>제주에서는 한 사람 뒤에 늘 다른 사람들이 서 있었다.</p>
+<p>그 관계를 괸당이라고 불렀다.<button class="fn" type="button" aria-expanded="false" aria-controls="ko-note-1" aria-label="주석 1">1</button></p>
+<aside class="note" id="ko-note-1"><span class="note-n">1</span> 괸당. 제주에서 멀고 가까운 친척과 인척을 두루 이르는 말. 현평효의 『제주말사전』은 돌보는 무리를 뜻하는 권당(眷黨)과 관련된 제주말로 설명한다.</aside>
+<p>괸당은 본래 친척과 인척을 가리키는 말이지만 촌수만으로는 다 설명되지 않았다. 같은 동네에서 오래 얼굴을 보아온 어른도 삼춘이었고, 자주 가는 식당의 주인도 삼춘이었다.</p>
+<p class="said">“삼춘, 오늘은 뭐가 맛있수꽈?”</p>
+<p>이름을 몰라도 삼춘이라고 부르면 말문이 열렸다.</p>
+<p>그렇게 부른다고 모두 괸당은 아니었다. 다만 삼춘이라는 호칭 안에서는 피로 이어진 사람과 살면서 가까워진 사람이 엄격히 나뉘지 않았다.</p>
+<p>내가 어려울 때 외면하기 힘들고, 그 집에 일이 생기면 나 역시 움직이게 되는 사이였다.</p>
+<p>관계는 생활 밖에 따로 있지 않았다.</p>
+<p>사람이 살아가는 일 속에 들어와 있었다.</p>
+<h2>얼굴은 아는데 이름은 몰랐다</h2>
+<p>우리 집 식게날이면 가까운 괸당 몇 사람이 찾아왔다. 제사를 지내고 음식을 나누며 서로의 얼굴을 확인했다.</p>
+<p>식게보다 더 많은 사람이 만나는 날은 혼례와 장례, 벌초 때였다.</p>
+<p>그곳에서 만난 어른들의 얼굴은 낯설지 않았다. 그런데 이름은 자주 헷갈렸다. 누구의 형제인지, 우리 집과 몇 촌으로 이어졌는지도 정확히 몰랐다.</p>
+<p>얼굴은 아는데 어떻게 불러야 할지 몰랐다.</p>
+<p>그래서 먼저 인사만 하고 상대가 나를 알아보기를 기다릴 때도 있었다.</p>
+<p>이상하게도 그분들은 나를 알았다.</p>
+<p class="said">“근효네 막내아들 아니가?”</p>
+<p>아버지 이름이 나오면 이야기가 빨라졌다. 누구를 닮았다는 말이 나오고 지금 어디에서 사느냐는 질문이 이어졌다.</p>
+<p>나는 그분의 이름과 촌수를 몰랐지만, 그분은 내가 누구의 아들인지 알고 있었다.</p>
+<p>그때는 조금 불편했다.</p>
+<p>내가 모르는 내 이야기를 상대가 더 많이 알고 있는 것처럼 느껴졌다.</p>
+<p>나이가 들고 나서야 알았다. 그분들이 나 개인을 잘 알았던 것은 아니었다. 나를 둘러싼 사람들을 기억하고 있었다.</p>
+<p>나는 아버지를 통해 설명됐고, 아버지는 할아버지와 형제들을 통해 설명됐다.</p>
+<p>그 관계를 따라가면 한 집안과 한 마을에 닿았다.</p>
+<h2>출석부는 없었지만 출석 확인은 정확했다</h2>
+<p>추석이 다가오면 일가가 모여 조상의 묘를 돌았다.</p>
+<p>낫을 들고 풀을 베었다. 한 묘의 일이 끝나면 다음 묘로 옮겨갔다. 점심을 먹고 나면 다시 낫을 들었다.</p>
+<p>일 년에 한 번 만나는 사람도 있었다.</p>
+<p>그런데 누가 왔고 누가 빠졌는지는 세지 않아도 알았다.</p>
+<p class="said">“누구네 집은 아들이 몇이나 나와서라.”</p>
+<p class="said">“누구네는 몇 년째 오지도 안 햄쩌.”</p>
+<p>육지에 살아 오지 못하는 사람은 대신 돈을 보내기도 했다. 총무를 정해 돈을 모았고, 산소에 올릴 음식과 함께 먹을 것을 마련했다. 출석부는 없었지만 출석 확인은 정확했다.</p>
+<p>술이 돌면 평소에는 꺼내지 않던 이야기도 풀밭 위로 올라왔다. 오래된 섭섭함이 튀어나왔고 목소리가 높아졌다.</p>
+<p>그래도 사람들은 낫을 놓고 돌아가지 않았다.</p>
+<p>언성을 높이다가도 다음 묘로 옮겨갔다. 점심때가 되면 같은 자리에 앉아 밥을 먹었다.</p>
+<p>다툼은 괸당의 반대말이 아니었다.</p>
+<p>같은 조상을 기억하고 같은 일을 함께 치렀기 때문에 섭섭할 일도 생겼다. 아무 관계가 없다면 따질 일도, 서운해할 일도 없었을 것이다.</p>
+<p>어릴 때 나는 그날이 묘의 풀을 베는 날인 줄만 알았다.</p>
+<p>돌아보면 사람들은 풀을 베는 동안 서로의 얼굴도 확인했다.</p>
+<p>나는 와산에서 태어났지만 제주시에서 학교를 다녔다. 주말과 명절이면 돌아갔어도 마을 골목을 매일 뛰어다니며 자란 아이들과는 달랐다. 어느 집이 누구네 집인지 몰랐고, 밭마다 붙은 작은 이름도 모르는 것이 많았다.</p>
+<p>그런데 고향에 갈 때마다 나보다 나를 더 잘 아는 사람들이 있었다.</p>
+<p>나는 그들의 이름을 모르는데 그들은 내가 누구의 아들이고 어느 집 손자인지를 알았다.</p>
+<p>고향은 태어난 자리이기도 했다.</p>
+<p>그러나 나를 기억하는 사람들이 있는 자리이기도 했다.</p>
+<h2>장부에는 시간도 적혀 있었다</h2>
+<p>집안에 큰일이 생기면 장부가 나왔다.</p>
+<p>결혼식에도 사람이 왔고 장례에도 사람이 왔다. 봉투에 적힌 이름과 금액을 하나씩 장부에 옮겨 적었다.</p>
+<p>행사가 끝나도 장부는 버리지 않았다.</p>
+<p>다른 집에 일이 생기면 다시 꺼냈다. 그 집에서 얼마를 했는지 살펴보고 이번에는 얼마를 해야 할지 정했다.</p>
+<p>어린 내 눈에는 이상한 셈법처럼 보였다.</p>
+<p>축하하고 위로하는 마음까지 돈으로 적어두는 것 같았다.</p>
+<p>그러나 그 돈은 한 번 오가고 끝나는 돈이 아니었다.</p>
+<p>오늘 내가 받으면 언젠가 돌려줄 차례가 왔다. 목돈이 필요한 날에는 여러 사람의 작은 돈이 한 집으로 모였고, 다음에는 그 집이 다른 집의 일을 거들었다.</p>
+<p>장부에 적힌 것은 금액만이 아니었다.</p>
+<p>누가 내 곁에 왔는지, 이제는 내가 누구에게 가야 하는지도 함께 적혀 있었다.</p>
+<p>물론 장부에는 고마움만 남지 않았다.</p>
+<p>받은 만큼 돌려주지 않으면 섭섭함이 생겼다. 누군가는 형편이 어려웠을 수도 있고 그때와 지금의 살림이 달라졌을 수도 있었다. 하지만 장부에는 그런 사정까지 적히지 않았다.</p>
+<p>부조는 어려운 날을 함께 건너는 힘이었다.</p>
+<p>동시에 언젠가 갚아야 할 빚처럼 느껴지기도 했다.</p>
+<h2>위로도 빨랐고 소문도 빨랐다</h2>
+<p>좁은 섬에서는 같은 얼굴을 여러 번 만났다.</p>
+<p>밭으로 가는 길에서 만난 사람을 장에서 다시 보았고, 잔칫집에서 본 사람을 얼마 뒤 상갓집에서 만났다.</p>
+<p>집안에 좋은 일이 생기면 금세 알려졌다. 궂은 일이 생겨도 오래 숨기기 어려웠다.</p>
+<p>위로가 빨리 왔다.</p>
+<p>소문도 빨리 왔다.</p>
+<p>선거철이 되면 우리 괸당이라는 말이 표를 부탁하는 말로 쓰이기도 했다. 관공서에 갈 일이 생기면 아는 사람 없느냐는 말을 듣기도 했다.</p>
+<p>밖에서는 특혜처럼 보였고 안에서는 빠져나가기 어려운 의무로 느껴질 때가 있었다.</p>
+<p>사람을 이어주던 관계가 때로는 사람을 가르는 선이 되었다.</p>
+<p>가까움은 힘이 되기도 했다.</p>
+<p>부담이 되기도 했다.</p>
+<p>괸당은 좋은 관계만을 가리키는 말이 아니었다.</p>
+<p>서로의 기쁜 날과 슬픈 날을 너무 오래 보아왔기 때문에 쉽게 모른 척할 수 없는 관계였다.</p>
+<h2>풀은 깨끗한데</h2>
+<p>예전에는 풀을 베기 위해 사람들이 왔다.</p>
+<p>요즘에는 사람 대신 전문 업체가 오는 집도 늘었다. 육지에 사는 자손이 많아졌고, 나이가 들어 산소까지 오르기 어려운 사람도 있다.</p>
+<p>마음이 사라진 것은 아닐 것이다.</p>
+<p>다만 그 마음을 확인하던 날이 줄었다.</p>
+<p>일을 맡은 사람들은 예초기로 풀을 깨끗하게 베었다. 베어진 풀은 가지런했고 산소 둘레도 말끔했다.</p>
+<p>그러나 그날 누가 자랐고 누가 늙었는지는 알 수 없었다.</p>
+<p>누구네 아들이 왔는지, 몇 년 만에 얼굴을 보인 사람이 누구인지 묻는 목소리도 들리지 않았다.</p>
+<p>일을 대신하는 사람은 생겼다.</p>
+<p>서로의 얼굴을 기억하는 시간까지 대신해주지는 못했다.</p>
+<p>풀은 전보다 깨끗하게 베어졌다.</p>
+<p>누가 누구와 이어졌는지를 배우는 일은 조금씩 어려워졌다.</p>
+<h2>슬픈 날에는 간다</h2>
+<p>그래도 장례 소식이 오면 많은 사람은 직접 간다.</p>
+<p>멀어도 간다.</p>
+<p>기쁜 일에는 가지 못해도 슬픈 일에는 가야 한다고 말하는 사람도 있다.</p>
+<p>장례식장에 가서 특별한 일을 하는 것은 아니다.</p>
+<p>상주의 손을 잡고 짧게 인사한다. 무슨 말을 해야 할지 몰라 고개만 숙이기도 한다. 밥을 먹고 아는 사람과 몇 마디 나눈 뒤 돌아온다.</p>
+<p>예전처럼 며칠씩 일을 거들지도 않는다.</p>
+<p>그런데도 굳이 그곳까지 간다.</p>
+<p>오래전에는 괸당이 무엇이냐고 물으면 촌수부터 설명했을 것이다.</p>
+<p>지금은 다르게 말할 것 같다.</p>
+<p>얼마나 가까운 친척인지를 따지기보다, 누군가에게 일이 생긴 날 내가 그 사람에게 갈 수 있는지를 먼저 생각할 것 같다.</p>
+<p>그 관계 안에 나는 태어날 때부터 들어가 있었다.</p>
+<p>하지만 태어났다고 관계가 저절로 이어지는 것은 아니었다. 누군가의 기쁜 날과 슬픈 날에 얼굴을 보인 시간이 쌓여야 했다.</p>
+<p>나는 그 시간을 충분히 채웠는지 자신할 수 없다.</p>
+<p>그날 장례식장에서도 나는 누구의 아들로 소개됐다.</p>
+<p>상주는 내 이름보다 먼저 아버지를 알아들었다.</p>
+<p>그래도 나는 그 자리에 가 있었다.</p>
+<p class="closing">슬픈 날에는 이름보다 사람이 먼저 왔다.</p>
+</main>
+<footer>
+<p class="book">『길은 살아낸 자리다』<br>돌과 바람과 물 사이, 제주 사람이 살아온 길</p>
+<p>양용호는 1969년 제주시 조천읍 와산리에서 태어나 대한항공 제주공항에서 삼십 년 동안 일했다. 영어판 『Jeju: What Nature Began, People Shaped』도 준비하고 있다.</p>
+<p>&copy; 양용호 2026</p>
+</footer>
+</article>
+
 <script>
-document.querySelectorAll('.fn').forEach(function(b){
-  b.addEventListener('click',function(){
-    var n=document.getElementById(b.getAttribute('aria-controls'));
-    var open=n.classList.toggle('open');
-    b.setAttribute('aria-expanded',open?'true':'false');
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.switch button');
+  function set(lang,push){
+    root.classList.toggle('show-ko',lang==='ko'); root.lang=lang;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false');});
+    if(push) history.replaceState(null,'',lang==='ko'?'#ko':location.pathname);
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang,true);});});
+  set(location.hash==='#ko'?'ko':'en',false);
+  document.querySelectorAll('.fn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var n=document.getElementById(b.getAttribute('aria-controls'));
+      var open=n.classList.toggle('open'); b.setAttribute('aria-expanded',open?'true':'false');
+    });
   });
-});
+})();
 </script>
 </body>
 </html>
